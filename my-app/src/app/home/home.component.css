@@ -1,0 +1,38 @@
+.news-article {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  
+  mat-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  mat-card-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; 
+    object-fit: cover;
+  }
+
+  
+  .news-article img {
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.d-flex {
+    display: flex;
+  }
+  .justify-content-end {
+    justify-content: flex-end;
+  }
+    
+  

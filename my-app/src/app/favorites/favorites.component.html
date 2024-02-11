@@ -1,0 +1,32 @@
+
+<div class="center-container">
+    <div>
+      <label for="sortOrder">Sort by: </label>
+<select id="sortOrder" (change)="onSortChange($event)">
+    <option value="latest">Latest Saved</option>
+    <option value="oldest">Oldest Saved</option>
+  </select>
+  
+    </div>
+  
+    <div class="d-flex">
+      <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Search favorites...">
+    </div>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button routerLink="/home" class="btn btn-primary">Go to home page</button>
+  </div>
+  <div *ngFor="let favorite of displayedFavorites" class="news-article">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ favorite.title }}</mat-card-title>
+        <mat-card-subtitle>{{ favorite.published_at | date: 'dd MMM yyyy' }} | Saved: {{ favorite.savedAt | date: 'dd MMM yyyy' }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="favorite.imageUrl" alt="Favorite image" class="favorite-image">
+
+      <mat-card-content>
+        <p>{{ favorite.summary }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
